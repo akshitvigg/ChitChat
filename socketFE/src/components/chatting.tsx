@@ -198,16 +198,16 @@ export const Chatting = () => {
                     return (
                       <div
                         key={index}
-                        className={`flex flex-col ${
+                        className={`flex flex-col mt-3 mr-3 ml-3 ${
                           isMymsg ? "items-end" : "items-start"
                         }`}
                       >
-                        <div className="text-xs text-gray-400 mb-1">
+                        <div className="text-xs mr-2 ml-2  text-gray-400 mb-1">
                           {m.name}
                         </div>
                         <div
-                          className={`p-3 bg-[#161616] border-[#3e3e3e] border-[1px] max-w-[80%] rounded-lg overscroll-auto ${
-                            isMymsg ? "bg-red-500/10 border-red-500/20" : ""
+                          className={`p-3  bg-[#161616] border-[#3e3e3e] border-[1px] max-w-[80%] rounded-lg overscroll-auto ${
+                            isMymsg ? "bg-blue-500/10 border-blue-500/20" : ""
                           }`}
                         >
                           {m.message}
