@@ -194,7 +194,7 @@ export const Chatting = () => {
                 room id: {localStorage.getItem("roomID")}{" "}
               </p>
               <div className="flex justify-center">
-                <div className="h-[60vh] w-[550px] rounded-lg mt-16 border border-neutral-700 overflow-y-scroll">
+                <div className="h-[60vh] w-[550px] rounded-lg mt-10 border border-neutral-700 overflow-y-scroll">
                   {messages.map((m, index) => {
                     const isMymsg = localStorage.getItem("name") === m.name;
                     return (
