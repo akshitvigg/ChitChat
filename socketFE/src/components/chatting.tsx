@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Copy } from "lucide-react";
 
 export const Chatting = () => {
   const webSocketRef = useRef<WebSocket | null>(null);
