@@ -189,9 +189,12 @@ export const Chatting = () => {
           <div className="h-[95vh] border w-[600px] rounded-xl border-neutral-700">
             <div>
               <p className="text-3xl pl-10 pt-4 font-bold">ChitChat</p>
-              <p className=" font-medium mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
+              <p className=" text-neutral-400 tracking-wider font-medium mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
                 {" "}
-                Room id: {localStorage.getItem("roomID")}{" "}
+                Room id:{" "}
+                <span className=" font-bold">
+                  {localStorage.getItem("roomID")}
+                </span>
               </p>
               <div className="flex justify-center">
                 <div className="h-[60vh] w-[550px] rounded-xl mt-10 border border-neutral-700 overflow-y-scroll">
