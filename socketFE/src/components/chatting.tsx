@@ -122,7 +122,7 @@ export const Chatting = () => {
 
   return (
     <div className="flex justify-center  text-white font-montserrat h-screen bg-black">
-      {/* <ToastContainer
+      <ToastContainer
         position="top-left"
         autoClose={3000}
         hideProgressBar={false}
@@ -133,10 +133,10 @@ export const Chatting = () => {
         draggable
         pauseOnHover
         theme="dark"
-      /> */}
+      />
 
       {!connected ? (
-        <div className="mt-32 border rounded-xl border-neutral-800 h-80 w-[600px] ">
+        <div className="mt-32 border rounded-xl border-neutral-800 h-[380px] w-[600px] ">
           <div className=" pt-5">
             <p className="text-3xl font-bold pl-10">Welcome to ChitChat</p>
           </div>
@@ -148,12 +148,17 @@ export const Chatting = () => {
               Create a room
             </button>
           </div>
+          <div className="flex items-center my-4">
+            <div className="flex-1 ml-10  border-t border-[#4e4e4e]"></div>
+            <span className="px-4 text-[#4e4e4e]">or</span>
+            <div className="flex-1 mr-10 border-t border-[#4e4e4e]"></div>
+          </div>
 
           <div className="flex justify-center pt-4 ">
             <div>
               <input
                 onChange={(e) => setUsername(e.target.value)}
-                className="bg-transparent w-[520px] rounded-lg p-3 border border-neutral-700"
+                className="bg-transparent outline-none w-[520px] rounded-lg p-3 border border-neutral-700"
                 type="text"
                 placeholder="Enter your name"
               />
@@ -161,7 +166,7 @@ export const Chatting = () => {
               <div className="flex">
                 <input
                   onChange={(e) => setRoomid(e.target.value)}
-                  className="mt-5 border border-neutral-700 block p-3 w-[435px] rounded-lg bg-transparent"
+                  className="mt-5 border outline-none border-neutral-700 block p-3 w-[435px] rounded-lg bg-transparent"
                   type="text"
                   placeholder="Enter room ID"
                 />
