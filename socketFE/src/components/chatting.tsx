@@ -194,7 +194,10 @@ export const Chatting = () => {
                 {" "}
                 Room id:{" "}
                 <span className=" font-bold">
-                  {localStorage.getItem("roomID")}
+                  {localStorage.getItem("roomID")}{" "}
+                  <button>
+                    <Copy />
+                  </button>
                 </span>
               </p>
               <div className="flex justify-center">
