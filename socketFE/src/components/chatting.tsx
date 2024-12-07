@@ -188,8 +188,8 @@ export const Chatting = () => {
         <div className="pt-5 flex justify-center">
           <div className="h-[95vh] border w-[600px] rounded-xl border-neutral-700">
             <div>
-              <p className="text-3xl pl-10 pt-4">ChitChat</p>
-              <p className=" mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
+              <p className="text-3xl pl-10 pt-4 font-bold">ChitChat</p>
+              <p className=" font-medium mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
                 {" "}
                 Room id: {localStorage.getItem("roomID")}{" "}
               </p>
@@ -231,7 +231,7 @@ export const Chatting = () => {
                 />
                 <button
                   onClick={sendMsg}
-                  className="ml-2 border bg-white text-black p-2 rounded-md px-8"
+                  className="ml-2 font-semibold border bg-white text-black p-2 rounded-md px-8"
                 >
                   Send
                 </button>
