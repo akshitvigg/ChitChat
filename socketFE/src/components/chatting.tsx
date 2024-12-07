@@ -121,8 +121,8 @@ export const Chatting = () => {
   }
 
   return (
-    <div className="flex justify-center text-white font-montserrat h-screen bg-black">
-      <ToastContainer
+    <div className="flex justify-center  text-white font-montserrat h-screen bg-black">
+      {/* <ToastContainer
         position="top-left"
         autoClose={3000}
         hideProgressBar={false}
@@ -133,18 +133,27 @@ export const Chatting = () => {
         draggable
         pauseOnHover
         theme="dark"
-      />
+      /> */}
 
       {!connected ? (
-        <div>
-          <div className="pt-16">
-            <p className="text-4xl">Welcome to ChitChat</p>
+        <div className="mt-32 border rounded-xl border-neutral-800 h-80 w-[600px] ">
+          <div className=" pt-5">
+            <p className="text-3xl font-bold pl-10">Welcome to ChitChat</p>
           </div>
-          <div className="flex justify-center pt-16">
+          <div className="pt-10 pl-10">
+            <button
+              onClick={createRoom}
+              className=" font-bold justify-center transition-all duration-300 hover:bg-gray-300 active:scale-105 bg-white text-black p-3 w-[520px]  rounded-md"
+            >
+              Create a room
+            </button>
+          </div>
+
+          <div className="flex justify-center pt-4 ">
             <div>
               <input
                 onChange={(e) => setUsername(e.target.value)}
-                className="bg-slate-900 p-3"
+                className="bg-transparent w-[520px] rounded-lg p-3 border border-neutral-700"
                 type="text"
                 placeholder="Enter your name"
               />
@@ -152,30 +161,19 @@ export const Chatting = () => {
               <div className="flex">
                 <input
                   onChange={(e) => setRoomid(e.target.value)}
-                  className="mt-5 block p-3 bg-slate-900"
+                  className="mt-5 border border-neutral-700 block p-3 w-[435px] rounded-lg bg-transparent"
                   type="text"
                   placeholder="Enter room ID"
                 />
                 <button
                   onClick={() => joinRoom()}
-                  className="bg-slate-800 px-5 ml-3 mt-5"
+                  className="font-bold rounded-lg transition-all duration-300 hover:bg-gray-300 active:scale-110 bg-white text-black px-5 ml-2 mt-5"
                 >
                   Join
                 </button>
               </div>
-              <div className="gap-3 flex">
-                <div className="border-t mt-3 w-32"></div>
-                <p>or</p>
-                <div className="border-t mt-3 w-32"></div>
-              </div>
-              <div className="flex justify-center pt-10">
-                <button
-                  onClick={createRoom}
-                  className="justify-center bg-rose-700 p-3 px-16 rounded-md"
-                >
-                  Create a room
-                </button>
-              </div>
+
+              <div className="flex justify-center pt-10"></div>
             </div>
           </div>
         </div>
