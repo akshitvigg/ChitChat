@@ -190,14 +190,23 @@ export const Chatting = () => {
           <div className="h-[95vh] border w-[600px] rounded-xl border-neutral-700">
             <div>
               <p className="text-3xl pl-10 pt-4 font-bold">ChitChat</p>
-              <p className=" text-neutral-400 tracking-wider font-medium mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
+              <p className="   text-neutral-400 tracking-wider font-medium mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
                 {" "}
                 Room id:{" "}
                 <span className=" font-bold">
                   {localStorage.getItem("roomID")}{" "}
-                  <button>
-                    <Copy />
-                  </button>
+                  <span className=" ml-1 ">
+                    <button
+                      onClick={() => {
+                        const id = localStorage.getItem("roomID");
+                        if (!id) return;
+                        navigator.clipboard.writeText(id);
+                        toast.success("copied to clipboard");
+                      }}
+                    >
+                      <Copy size={18} />
+                    </button>
+                  </span>
                 </span>
               </p>
               <div className="flex justify-center">
