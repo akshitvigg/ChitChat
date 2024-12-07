@@ -122,7 +122,7 @@ export const Chatting = () => {
 
   return (
     <div className="flex justify-center  text-white font-montserrat h-screen bg-black">
-      <ToastContainer
+      {/* <ToastContainer
         position="top-left"
         autoClose={3000}
         hideProgressBar={false}
@@ -133,40 +133,42 @@ export const Chatting = () => {
         draggable
         pauseOnHover
         theme="dark"
-      />
+      /> */}
 
       {!connected ? (
-        <div className="mt-32 border rounded-xl border-neutral-800 h-[380px] w-[600px] ">
+        <div className="mt-32 border rounded-xl border-neutral-800 h-[380px] w-80 sm:w-[600px] ">
           <div className=" pt-5">
-            <p className="text-3xl font-bold pl-10">Welcome to ChitChat</p>
+            <p className="sm:text-3xl text-2xl font-bold sm:pl-10 pl-5">
+              Welcome to ChitChat
+            </p>
           </div>
-          <div className="pt-10 pl-10">
+          <div className="pt-10 sm:pl-10 pl-5">
             <button
               onClick={createRoom}
-              className=" font-bold justify-center transition-all duration-300 hover:bg-gray-300 active:scale-105 bg-white text-black p-3 w-[520px]  rounded-md"
+              className=" font-bold justify-center transition-all duration-300 hover:bg-gray-300 active:scale-105 bg-white text-black p-3 w-72 sm:w-[520px]  rounded-md"
             >
               Create a room
             </button>
           </div>
           <div className="flex items-center my-4">
-            <div className="flex-1 ml-10  border-t border-[#4e4e4e]"></div>
+            <div className="flex-1 ml-5 sm:ml-10  border-t border-[#4e4e4e]"></div>
             <span className="px-4 text-[#4e4e4e]">or</span>
-            <div className="flex-1 mr-10 border-t border-[#4e4e4e]"></div>
+            <div className="flex-1 mr-5 sm:mr-10 border-t border-[#4e4e4e]"></div>
           </div>
 
           <div className="flex justify-center pt-4 ">
-            <div>
+            <div className="sm:pl-0 pl-64">
               <input
                 onChange={(e) => setUsername(e.target.value)}
-                className="bg-transparent outline-none w-[520px] rounded-lg p-3 border border-neutral-700"
+                className="bg-transparent outline-none w-[280px] sm:w-[520px] rounded-lg p-3 border border-neutral-700"
                 type="text"
                 placeholder="Enter your name"
               />
 
-              <div className="flex">
+              <div className="flex sm:pr-0 pr-64">
                 <input
                   onChange={(e) => setRoomid(e.target.value)}
-                  className="mt-5 border outline-none border-neutral-700 block p-3 w-[435px] rounded-lg bg-transparent"
+                  className="mt-5 border w-[200px] outline-none border-neutral-700 block p-3 sm:w-[435px] rounded-lg bg-transparent"
                   type="text"
                   placeholder="Enter room ID"
                 />
