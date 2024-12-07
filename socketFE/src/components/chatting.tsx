@@ -122,7 +122,7 @@ export const Chatting = () => {
 
   return (
     <div className="flex justify-center  text-white font-montserrat h-screen bg-black">
-      {/* <ToastContainer
+      <ToastContainer
         position="top-left"
         autoClose={3000}
         hideProgressBar={false}
@@ -133,7 +133,7 @@ export const Chatting = () => {
         draggable
         pauseOnHover
         theme="dark"
-      /> */}
+      />
 
       {!connected ? (
         <div className="mt-32 border rounded-xl border-neutral-800 h-[380px] w-80 sm:w-[600px] ">
