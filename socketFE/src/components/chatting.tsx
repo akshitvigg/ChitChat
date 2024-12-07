@@ -187,15 +187,15 @@ export const Chatting = () => {
         </div>
       ) : (
         <div className="pt-5 flex justify-center">
-          <div className="h-[95vh] border w-[600px] rounded-xl border-neutral-700">
+          <div className="h-[95vh] border w-full max-w-[600px] rounded-xl border-neutral-700">
             <div>
-              <p className="text-3xl pl-10 pt-4 font-bold">ChitChat</p>
-              <p className="   text-neutral-400 tracking-wider font-medium mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
+              <p className="text-3xl pl-4 sm:pl-10 pt-4 font-bold">ChitChat</p>
+              <p className="text-neutral-400 tracking-wider font-medium mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
                 {" "}
                 Room id:{" "}
-                <span className=" font-bold">
+                <span className="font-bold">
                   {localStorage.getItem("roomID")}{" "}
-                  <span className=" ml-1 ">
+                  <span className="inline-flex items-center ml-1">
                     <button
                       onClick={() => {
                         const id = localStorage.getItem("roomID");
@@ -210,7 +210,7 @@ export const Chatting = () => {
                 </span>
               </p>
               <div className="flex justify-center">
-                <div className="h-[60vh] w-[550px] rounded-xl mt-10 border border-neutral-700 overflow-y-scroll">
+                <div className="h-[60vh] w-full max-w-[550px] rounded-xl mt-10 border border-neutral-700 overflow-y-scroll">
                   {messages.map((m, index) => {
                     const isMymsg = localStorage.getItem("name") === m.name;
                     return (
@@ -220,11 +220,11 @@ export const Chatting = () => {
                           isMymsg ? "items-end" : "items-start"
                         }`}
                       >
-                        <div className="text-xs mr-2 ml-2  text-gray-400 mb-1">
+                        <div className="text-xs mr-2 ml-2 text-gray-400 mb-1">
                           {m.name}
                         </div>
                         <div
-                          className={`p-3  bg-[#161616] border-[#3e3e3e] border-[1px] max-w-[80%] rounded-lg overscroll-auto ${
+                          className={`p-3 bg-[#161616] border-[#3e3e3e] border-[1px] max-w-[80%] rounded-lg overscroll-auto ${
                             isMymsg ? "bg-blue-500/10 border-blue-500/20" : ""
                           }`}
                         >
@@ -235,19 +235,19 @@ export const Chatting = () => {
                   })}
                 </div>
               </div>
-              <div className="pl-6 pt-6">
+              <div className="pl-6 pt-6 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                 <input
                   value={currMsg}
                   onKeyDown={handleKeyPress}
                   onChange={(e) => setCurMsg(e.target.value)}
-                  className="outline-none w-[443px] p-2 bg-transparent border border-neutral-700 rounded-md"
+                  className="outline-none w-full sm:w-[443px] p-2 bg-transparent border border-neutral-700 rounded-md"
                   type="text"
                   placeholder="Type your message..."
                   required={true}
                 />
                 <button
                   onClick={sendMsg}
-                  className="ml-2 font-semibold border bg-white text-black p-2 rounded-md px-8"
+                  className="w-full sm:w-auto ml-0 sm:ml-2 font-semibold border bg-white text-black p-2 rounded-md sm:px-8"
                 >
                   Send
                 </button>
