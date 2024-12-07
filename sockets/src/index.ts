@@ -1,5 +1,4 @@
 import { WebSocketServer, WebSocket } from "ws";
-import { random } from "./utils";
 
 interface Users {
   socket: WebSocket;
@@ -10,7 +9,7 @@ let allsocket: Users[] = [];
 
 const wss = new WebSocketServer({ port: 8080 });
 
-wss.on("connection", (socket) => {
+wss.on("connection", (socket: WebSocket) => {
   socket.on("message", (message) => {
     let parsedMsg = JSON.parse(message as unknown as string);
     if (parsedMsg.type == "join") {
