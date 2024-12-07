@@ -12,18 +12,16 @@ wss.on("connection", (socket) => {
                 roomId: parsedMsg.payload.roomId,
             });
         }
-        if (parsedMsg.type == "chat") {
-            let currUsrRoom = null;
-            for (let i = 0; i < allsocket.length; i++) {
-                if (allsocket[i].socket == socket) {
-                    currUsrRoom = allsocket[i].roomId;
+        if (parsedMsg.type === "chat") {
+            const currUser = allsocket.find((x) => x.socket == socket);
+            allsocket.map((e) => {
+                if (e.roomId == (currUser === null || currUser === void 0 ? void 0 : currUser.roomId)) {
+                    e.socket.send(JSON.stringify({
+                        name: parsedMsg.payload.name,
+                        message: parsedMsg.payload.message,
+                    }));
                 }
-            }
-            for (let i = 0; i < allsocket.length; i++) {
-                if (allsocket[i].roomId == currUsrRoom) {
-                    allsocket[i].socket.send(parsedMsg.payload.message);
-                }
-            }
+            });
         }
     });
 });

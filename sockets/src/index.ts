@@ -1,4 +1,5 @@
 import { WebSocketServer, WebSocket } from "ws";
+import { random } from "./utils";
 
 interface Users {
   socket: WebSocket;
@@ -19,19 +20,18 @@ wss.on("connection", (socket) => {
       });
     }
 
-    if (parsedMsg.type == "chat") {
-      let currUsrRoom = null;
-      for (let i = 0; i < allsocket.length; i++) {
-        if (allsocket[i].socket == socket) {
-          currUsrRoom = allsocket[i].roomId;
+    if (parsedMsg.type === "chat") {
+      const currUser = allsocket.find((x) => x.socket == socket);
+      allsocket.map((e) => {
+        if (e.roomId == currUser?.roomId) {
+          e.socket.send(
+            JSON.stringify({
+              name: parsedMsg.payload.name,
+              message: parsedMsg.payload.message,
+            })
+          );
         }
-      }
-
-      for (let i = 0; i < allsocket.length; i++) {
-        if (allsocket[i].roomId == currUsrRoom) {
-          allsocket[i].socket.send(parsedMsg.payload.message);
-        }
-      }
+      });
     }
   });
 });
