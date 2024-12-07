@@ -186,13 +186,15 @@ export const Chatting = () => {
         </div>
       ) : (
         <div className="pt-5 flex justify-center">
-          <div className="h-[95vh] border w-[600px] rounded-lg border-neutral-700">
+          <div className="h-[95vh] border w-[600px] rounded-xl border-neutral-700">
             <div>
-              <p className="text-3xl">
-                Real Time Chat room id: {localStorage.getItem("roomID")}{" "}
+              <p className="text-3xl pl-10 pt-4">ChitChat</p>
+              <p className=" mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
+                {" "}
+                room id: {localStorage.getItem("roomID")}{" "}
               </p>
               <div className="flex justify-center">
-                <div className="h-[60vh] w-[550px] rounded-lg mt-32 border border-neutral-700 overflow-y-scroll">
+                <div className="h-[60vh] w-[550px] rounded-lg mt-16 border border-neutral-700 overflow-y-scroll">
                   {messages.map((m, index) => {
                     const isMymsg = localStorage.getItem("name") === m.name;
                     return (
