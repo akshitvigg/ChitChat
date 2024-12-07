@@ -191,10 +191,10 @@ export const Chatting = () => {
               <p className="text-3xl pl-10 pt-4">ChitChat</p>
               <p className=" mt-5 p-4 rounded-xl bg-[#262626] ml-5 mr-5">
                 {" "}
-                room id: {localStorage.getItem("roomID")}{" "}
+                Room id: {localStorage.getItem("roomID")}{" "}
               </p>
               <div className="flex justify-center">
-                <div className="h-[60vh] w-[550px] rounded-lg mt-10 border border-neutral-700 overflow-y-scroll">
+                <div className="h-[60vh] w-[550px] rounded-xl mt-10 border border-neutral-700 overflow-y-scroll">
                   {messages.map((m, index) => {
                     const isMymsg = localStorage.getItem("name") === m.name;
                     return (
