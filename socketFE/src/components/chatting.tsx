@@ -39,7 +39,8 @@ export const Chatting = () => {
   };
 
   useEffect(() => {
-    const ws = new WebSocket("wss://backend-sockets.onrender.com");
+    // const ws = new WebSocket("wss://backend-sockets.onrender.com");
+    const ws = new WebSocket("wss://chit-chat-cdm3.vercel.app/");
     webSocketRef.current = ws;
 
     ws.onopen = () => {
