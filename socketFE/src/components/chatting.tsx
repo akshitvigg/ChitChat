@@ -39,7 +39,7 @@ export const Chatting = () => {
   };
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080");
+    const ws = new WebSocket("wss://backend-sockets.onrender.com");
     webSocketRef.current = ws;
 
     ws.onopen = () => {
